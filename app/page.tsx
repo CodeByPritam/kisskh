@@ -1,6 +1,13 @@
+import Carousel from "@/components/site/carousel";
+
 // Export Master Home
 export default function MasterHome() {
   return (
-    <div>Application Body</div>
+    <div id="__appbody">
+      <Carousel/>
+      <div className="section-parts">
+        LOL
+      </div>
+    </div>
   );
 }
