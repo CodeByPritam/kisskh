@@ -2,8 +2,8 @@ import { Menu, Search, Heart } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 
-// Export Master Header ({ Frontend: Site })
-export default function MasterHeader() {
+// Export Header ({ Frontend: Site })
+export default function Header() {
     return (
         /* --- Header: Begin --- */
         <header id="__header">
