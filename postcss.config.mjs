@@ -1,7 +1,6 @@
 const config = {
-  plugins: {
-    "@tailwindcss/postcss": {},
-  },
+  plugins: { "@tailwindcss/postcss": {}, },
 };
 
+// Export PostCSS Config
 export default config;
