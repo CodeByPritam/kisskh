@@ -1,0 +1,102 @@
+/* ================================================ */
+/* =========== Application Home: Begin ============ */
+/* ================================================ */
+.__theme {
+    background: var(--background);
+    height: 100dvh;
+    background-image: var(--grid-style);
+    background-size: 60px 60px;
+}
+
+/* ========== Site Header ========== */
+header#__header {
+    position: relative;
+    height: 80px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+._inner {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 64px;
+}
+
+/* ========== Header :: Lsb & Rsb ========== */
+.lsb {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    column-gap: 48px;
+}
+
+.rsb {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+}
+
+/* ========== Headers :: Items ========== */
+.hamburger { display: none; }
+a.site-logo {
+    cursor: pointer;
+    display: flex;
+}
+
+a.site-logo img {
+    width: auto;
+    height: 22px;
+    object-fit: cover;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 26px;
+}
+
+a.elm.active { color: #fff; }
+a.elm,
+a.toggle-search,
+a.my-list,
+a.user {
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #adadad;
+    align-items: center;
+    column-gap: 8px;
+}
+
+a.elm:hover,
+a.toggle-search:hover,
+a.my-list:hover,
+a.user:hover {
+    color: var(--accent-color);
+    transition: all .2s ease-in-out;
+}
+
+a.toggle-search, 
+a.my-list,
+a.user { color: white }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========== Media Screen ========= */
+@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 930px) {}

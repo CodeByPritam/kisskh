@@ -1,25 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
 /* ===== Root Vars ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000;
+  --grid-style: linear-gradient(#80808025 1px, #00000025 1px), linear-gradient(90deg, #80808025 1px, #00000025 1px);
+  --background-header: #0a0c0f;
+  --accent-color: #f77e0b;
 }
 
 /* ================================================== */
 /* ========== Application Default Settings ========== */
 /* ================================================== */
+*, html,
+body {
+  padding: 0px 0px;
+  margin: 0px 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+ol,ul,li { list-style: none; }
+button:focus, a:focus, input:focus, textarea:focus { outline: none; }
+::-webkit-scrollbar { display: none; }
+a, a:hover { text-decoration: none; }

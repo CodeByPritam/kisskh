@@ -1,4 +1,4 @@
-import { Menu, Search, Heart } from 'lucide-react';
+import { Menu, Search, Heart, CircleUserRound } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,8 +22,9 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="rsb">
-                    <Link href={"/search"} className="toggle-search"> <Search/> Search </Link>
-                    <Link href={"/my-list"} className="my-list"> <Heart/> My List </Link>
+                    <Link href={"/search"} className="toggle-search"> <Search size={20} /> Search </Link>
+                    <Link href={"/my-list"} className="my-list"> <Heart size={20} /> My List </Link>
+                    <Link href={"/sign-in"} className="user"> <CircleUserRound size={20} /> Sign In </Link>
                 </div>
             </div>
         </header>
