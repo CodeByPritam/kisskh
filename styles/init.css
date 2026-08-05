@@ -90,6 +90,7 @@ a.user { color: white }
 #__appbody {
     position: relative;
     bottom: 80px;
+    height: inherit;
 }
 
 /* ========== SwiperJS ========== */
@@ -250,7 +251,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 /* ================== Section Slider ================= */
 /* =================================================== */
 .home-section {
-    background: var(--background);
+    background: linear-gradient(to bottom, #000000, #303030);
     padding: 20px 20px;
 }
 
@@ -258,7 +259,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 section.embla-carousel.rail-section {
     --rail-slide-width: clamp(13rem, calc((100vw - 3.5rem) / 4.6), 26rem);
     --rail-poster-center: clamp(4.5rem, 7.3125vw, 6.1875rem);
-    margin: 0 0 28px 0;
+    margin: 0 0 44px 0;
     padding: 0 44px;
     position: relative;
 }
@@ -366,7 +367,7 @@ a.view-more {
 
 .status.complete { background: #37ad4c; }
 .status.ongoing { background: var(--accent-color); }
-.status.upcomming { background: #9137ad; }
+.status.upcoming { background: #9137ad; }
 .status {
     padding: 4px 40px;
     top: 20px;
@@ -396,7 +397,7 @@ a.view-more {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 12px;
+    padding: 12px 12px;
     background: #444;
     z-index: 999;
     line-height: 20px;

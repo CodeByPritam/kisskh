@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -19,6 +20,9 @@ interface Props {
 
 // Export ContentCarousel ({ Frontend: Site })
 export default function ContentCarousel({ section, viewMoreLink, response }: Props) {
+    const uniq = useId().replace(/:/g, "");
+
+    // Return JSX
     return (
         <section className="embla-carousel rail-section">
             <div className="top-row">
@@ -30,8 +34,8 @@ export default function ContentCarousel({ section, viewMoreLink, response }: Pro
                     centeredSlides={false}
                     modules={[Navigation]}
                     navigation={{
-                        prevEl: ".embla-prev",
-                        nextEl: ".embla-next",
+                        prevEl: `.emp-${uniq}`,
+                        nextEl: `.emn-${uniq}`,
                     }}
                     spaceBetween={0}
                     slidesPerView={4}
@@ -55,8 +59,8 @@ export default function ContentCarousel({ section, viewMoreLink, response }: Pro
                     })}
 
                 </Swiper>
-                <button className="embla-prev"> <ChevronLeft size={22} strokeWidth={4}/> </button>
-                <button className="embla-next"> <ChevronRight size={22} strokeWidth={4}/> </button>
+                <button className={`emp-${uniq} embla-prev`}> <ChevronLeft size={22} strokeWidth={4}/> </button>
+                <button className={`emn-${uniq} embla-next`}> <ChevronRight size={22} strokeWidth={4}/> </button>
             </div>
         </section>
     );
