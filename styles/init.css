@@ -86,9 +86,9 @@ a.toggle-search,
 a.my-list,
 a.user { color: white }
 
-/* =========================================== */
-/* ================= Carousel ================ */
-/* =========================================== */
+/* ================================================ */
+/* ================= main Carousel ================ */
+/* ================================================ */
 #__appbody {
     position: relative;
     bottom: 80px;
@@ -101,7 +101,7 @@ a.user { color: white }
     position: relative;
     display: block;
     width: 100%;
-    height: 85vh;
+    height: 70vh;
     overflow: hidden;
 }
 
@@ -246,4 +246,127 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 .swiper-next {
     right: 64px;
     top: 50%;
+}
+
+/* =================================================== */
+/* ================== Section Slider ================= */
+/* =================================================== */
+.home-section {
+    background: var(--background);
+    padding: 20px 20px;
+}
+
+/* ========== Rail Section ========== */
+section.embla-carousel.rail-section {
+    --rail-slide-width: clamp(13rem, calc((100vw - 3.5rem) / 4.6), 26rem);
+    --rail-poster-center: clamp(4.5rem, 7.3125vw, 6.1875rem);
+    margin: 0 0 28px 0;
+    padding: 0 44px;
+    position: relative;
+}
+
+.top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-name {
+    position: relative;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 0 0 0 20px;
+}
+
+.section-name::before {
+    content: "";
+    background: var(--accent-color);
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+a.view-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    column-gap: 8px;
+    padding: 4px 6px 4px 10px;
+    background: #fff3;
+    border-radius: 2px;
+}
+
+/* ========== Single Emble ========== */
+.rail-grid { display: flex; }
+.embla-grid .swiper-wrapper{ gap: 1rem; }
+.embla-slide {
+    position: relative !important;
+    width: 390px !important;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.embla-slide:hover .poster img {
+    transform: scale(1.2);
+    transition: all .2s ease-in-out;
+}
+
+.embla-slide a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.poster {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.poster img {
+    object-fit: contain;
+    width: 100%;
+}
+
+/* ========== Absolutes ========== */
+.isComplete, .type, .episode, .uploadAt {
+    display: none;
+    position: absolute;
+}
+
+/* ========== Title ========== */
+.title {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 12px;
+    background: #444;
+    z-index: 999;
+    line-height: 20px;
+}
+
+.title:hover {
+    color: var(--accent-color);
+    transition: all .2s ease-in-out;
+}
+
+/* ========== Clickable Bottons ========== */
+button.embla-next,
+button.embla-prev {
+    position: absolute;
+    display: none;
 }
