@@ -1,7 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Virtual, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import Image from "next/image";
@@ -14,7 +14,7 @@ import 'swiper/css/navigation';
 interface Props {
   section: string;
   viewMoreLink: string;
-  response: object;
+  response: any;
 }
 
 // Export ContentCarousel ({ Frontend: Site })
@@ -28,30 +28,27 @@ export default function ContentCarousel({ section, viewMoreLink, response }: Pro
             <div className="rail-grid">
                 <Swiper
                     centeredSlides={false}
-                    modules={[Virtual, Navigation]}
-                    virtual
+                    modules={[Navigation]}
                     navigation={{
                         prevEl: ".embla-prev",
                         nextEl: ".embla-next",
                     }}
                     spaceBetween={0}
-                    slidesPerView={8}
-                    slidesPerGroup={4}
+                    slidesPerView={4}
                     className="embla-grid"
                 >
 
-                    {Array.from({ length: 100 }, (_, index) => {
+                    {response.map((res: any, index: any) => {
                         return (
-                            <SwiperSlide className="embla-slide" key={index} virtualIndex={index}>
-                                <Link href={"/tv-shows/dream-to-you"}>
+                            <SwiperSlide className="embla-slide" key={index}>
+                                <Link href={`/${res.type}${res.slug}`}>
                                     <div className="poster">
-                                        <div className="isComplete">Complete</div>
-                                        <Image src={"https://image.tmdb.org/t/p/w1000_and_h563_face/feISh3qoREwIPWbSaLqqumbmh7m.jpg"} width={1280} height={720} alt="Dream"/>
-                                        <div className="type">Drama</div>
-                                        <div className="episode">Ep: 12</div>
-                                        <div className="uploadAt">2h ago</div>
+                                        <div className="is subbed">Sub</div>
+                                        <div className="is status complete">Complete</div>
+                                        <Image src={res.image} alt={res.title} width={1280} height={720} loading='lazy'/>
+                                        <div className="episode">EP {res.episode}</div>
                                     </div>
-                                    <div className="title">Spiderman: Brand New Day</div>
+                                    <div className="title">{res.title}</div>
                                 </Link>
                             </SwiperSlide>
                         );

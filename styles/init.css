@@ -49,7 +49,7 @@ a.site-logo {
 
 a.site-logo img {
     width: auto;
-    height: 22px;
+    height: 24px;
     object-fit: cover;
 }
 
@@ -72,15 +72,13 @@ a.user {
     color: #adadad;
     align-items: center;
     column-gap: 8px;
+    transition: all .2s ease-in-out;
 }
 
 a.elm:hover,
 a.toggle-search:hover,
 a.my-list:hover,
-a.user:hover {
-    color: var(--accent-color);
-    transition: all .2s ease-in-out;
-}
+a.user:hover { color: var(--accent-color); }
 
 a.toggle-search, 
 a.my-list,
@@ -292,23 +290,26 @@ section.embla-carousel.rail-section {
     left: 0;
 }
 
+a.view-more:hover { color: #fff9 }
 a.view-more {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    font-family: 'Geist', sans-serif !important;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 600;
-    line-height: 20px;
+    line-height: 18px;
     column-gap: 8px;
-    padding: 4px 6px 4px 10px;
+    padding: 6px 8px 6px 12px;
     background: #fff3;
     border-radius: 2px;
+    transition: all .2s ease-in-out;
 }
 
 /* ========== Single Emble ========== */
 .rail-grid { display: flex; }
-.embla-grid .swiper-wrapper{ gap: 1rem; }
+.embla-grid .swiper-wrapper{ gap: 20px; }
 .embla-slide {
     position: relative !important;
     width: 390px !important;
@@ -316,11 +317,7 @@ a.view-more {
     overflow: hidden;
 }
 
-.embla-slide:hover .poster img {
-    transform: scale(1.2);
-    transition: all .2s ease-in-out;
-}
-
+.embla-slide:hover .title { color: var(--accent-color); }
 .embla-slide a {
     display: flex;
     align-items: center;
@@ -338,10 +335,56 @@ a.view-more {
     width: 100%;
 }
 
-/* ========== Absolutes ========== */
-.isComplete, .type, .episode, .uploadAt {
-    display: none;
+.poster::after {
+    content: "";
+    background: linear-gradient(#0000, #000);
+    height: 40%;
     position: absolute;
+    inset: auto 0 0;
+}
+
+/* ========== Absolutes ========== */
+.is { 
+    z-index: 99;
+    position: absolute;
+    transform: rotate(-44deg);
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    line-height: 18px;
+    letter-spacing: .1px;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 25%);
+}
+
+.subbed {
+    background: #4b4c4d;
+    padding: 16px 30px 6px 30px;
+    top: -8px;
+    left: -28px;
+}
+
+.status.complete { background: #37ad4c; }
+.status.ongoing { background: var(--accent-color); }
+.status.upcomming { background: #9137ad; }
+.status {
+    padding: 4px 40px;
+    top: 20px;
+    left: -32px;
+}
+
+.episode {
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+    font-family: Montserrat, sans-serif !important;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 99;
+    padding: 2px 8px;
+    background: #fff4;
+    line-height: 18px;
 }
 
 /* ========== Title ========== */
@@ -357,10 +400,6 @@ a.view-more {
     background: #444;
     z-index: 999;
     line-height: 20px;
-}
-
-.title:hover {
-    color: var(--accent-color);
     transition: all .2s ease-in-out;
 }
 
@@ -368,5 +407,20 @@ a.view-more {
 button.embla-next,
 button.embla-prev {
     position: absolute;
-    display: none;
+    color: white;
+    z-index: 99;
+    padding: 10px 0px;
+    background: rgb(247 126 11 / 50%);
+    border-radius: 2px;
+}
+
+button.embla-next {
+    right: 64px;
+    top: 50%;
+}
+
+button.embla-prev {
+    left: 64px;
+    top: 50%;
+    
 }
